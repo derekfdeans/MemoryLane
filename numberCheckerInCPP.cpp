@@ -3,20 +3,21 @@
 int getInput();
 
 int main() {
-	cout << "choose a password: ";
+	std::cout << "choose a password: ";
 	int answer;
-	cin >> answer;
+	std::cin >> answer;
 
-	cout << "what's the password? " << answer;
-	for (int i = getInput(); i != answer; cin >> i) {
+	std::cout << "what's the password? ( " << answer << " )";
+	for (int i = getInput(); i != answer; i = getInput()) {
 		if (i != answer) {
-			cout << "that's incorrect. try again";
+			std::cout << "that's incorrect. try again: ";
 		}
 	}
+	std::cout << "\nthat's correct!";
 }
 
 int getInput() {
 	int number;
-	cin >> number;
-	return cin;
+	std::cin >> number;
+	return number;
 }
